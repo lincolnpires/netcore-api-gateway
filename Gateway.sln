@@ -6,6 +6,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotApi", "OcelotApi\Ocel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceOne", "ServiceOne\ServiceOne.csproj", "{F61A7EF1-A403-41B3-9081-6B9599BB6F2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceTwo", "ServiceTwo\ServiceTwo.csproj", "{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,18 @@ Global
 		{F61A7EF1-A403-41B3-9081-6B9599BB6F2F}.Release|x64.Build.0 = Release|Any CPU
 		{F61A7EF1-A403-41B3-9081-6B9599BB6F2F}.Release|x86.ActiveCfg = Release|Any CPU
 		{F61A7EF1-A403-41B3-9081-6B9599BB6F2F}.Release|x86.Build.0 = Release|Any CPU
+		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Debug|x64.Build.0 = Debug|Any CPU
+		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Debug|x86.Build.0 = Debug|Any CPU
+		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Release|x64.ActiveCfg = Release|Any CPU
+		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Release|x64.Build.0 = Release|Any CPU
+		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Release|x86.ActiveCfg = Release|Any CPU
+		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
