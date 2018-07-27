@@ -1,5 +1,54 @@
 ﻿{
-  "ReRoutes": [],
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/values/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 54162
+        }
+      ],
+      "UpstreamPathTemplate": "/one/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/values/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 54162
+        }
+      ],
+      "UpstreamPathTemplate": "/one/",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/values/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 54209
+        }
+      ],
+      "UpstreamPathTemplate": "/two/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/values/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 54209
+        }
+      ],
+      "UpstreamPathTemplate": "/two/",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
   "GlobalConfiguration": {
     "BaseUrl": "http://localhost:59266/"
   }
