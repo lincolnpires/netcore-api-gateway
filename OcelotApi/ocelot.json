@@ -1,4 +1,4 @@
-﻿{
+{
   "ReRoutes": [
     {
       "DownstreamPathTemplate": "/api/values/{everything}",
@@ -22,7 +22,8 @@
         }
       ],
       "UpstreamPathTemplate": "/one/",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "values1"
     },
     {
       "DownstreamPathTemplate": "/api/values/{everything}",
@@ -46,10 +47,19 @@
         }
       ],
       "UpstreamPathTemplate": "/two/",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "values2"
+    }
+  ],
+  "Aggregates": [
+    {
+      "ReRouteKeys": [ "values1", "values2" ],
+      "UpstreamPathTemplate": "/both/",
+      "Aggregator": "ValuesAggregator"
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:59266/"
+    "BaseUrl": "http://localhost:59266/",
+    "AdministrationPath":  "/adm"
   }
 }

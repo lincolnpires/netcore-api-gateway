@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,7 +26,12 @@ namespace OcelotApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddOcelot(Configuration);
+            string path = "/adm";
+            string secret = nameof(secret);
+
+            services.AddOcelot(Configuration)
+                .AddTransientDefinedAggregator<ValuesAggregator>()
+                .AddAdministration(path, secret);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
