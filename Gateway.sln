@@ -4,9 +4,11 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotApi", "OcelotApi\OcelotApi.csproj", "{BA538975-CA1E-438C-AAF5-0D7BD7668E27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceOne", "ServiceOne\ServiceOne.csproj", "{F61A7EF1-A403-41B3-9081-6B9599BB6F2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceOne", "ServiceOne\ServiceOne.csproj", "{F61A7EF1-A403-41B3-9081-6B9599BB6F2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceTwo", "ServiceTwo\ServiceTwo.csproj", "{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceTwo", "ServiceTwo\ServiceTwo.csproj", "{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceThree", "ServiceThree\ServiceThree.csproj", "{9530F761-5B5F-4C4E-A2DF-B4161D3C39C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +56,18 @@ Global
 		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Release|x64.Build.0 = Release|Any CPU
 		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Release|x86.ActiveCfg = Release|Any CPU
 		{A6F61621-5E8F-4EFF-9AD6-F806C70ED22E}.Release|x86.Build.0 = Release|Any CPU
+		{9530F761-5B5F-4C4E-A2DF-B4161D3C39C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9530F761-5B5F-4C4E-A2DF-B4161D3C39C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9530F761-5B5F-4C4E-A2DF-B4161D3C39C8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9530F761-5B5F-4C4E-A2DF-B4161D3C39C8}.Debug|x64.Build.0 = Debug|Any CPU
+		{9530F761-5B5F-4C4E-A2DF-B4161D3C39C8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9530F761-5B5F-4C4E-A2DF-B4161D3C39C8}.Debug|x86.Build.0 = Debug|Any CPU
+		{9530F761-5B5F-4C4E-A2DF-B4161D3C39C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9530F761-5B5F-4C4E-A2DF-B4161D3C39C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9530F761-5B5F-4C4E-A2DF-B4161D3C39C8}.Release|x64.ActiveCfg = Release|Any CPU
+		{9530F761-5B5F-4C4E-A2DF-B4161D3C39C8}.Release|x64.Build.0 = Release|Any CPU
+		{9530F761-5B5F-4C4E-A2DF-B4161D3C39C8}.Release|x86.ActiveCfg = Release|Any CPU
+		{9530F761-5B5F-4C4E-A2DF-B4161D3C39C8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

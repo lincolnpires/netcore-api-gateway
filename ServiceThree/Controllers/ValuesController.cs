@@ -1,42 +1,36 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
-namespace ServiceOne.Controllers
+namespace ServiceThree.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    [ApiController]
+    public class ValuesController : ControllerBase
     {
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "ServiceOne value1", "ServiceOne value2" };
+            return new string[] { "ServiceThree value1", "ServiceThree value2" };
         }
 
         // GET api/values/5
-        [HttpGet("{id}/filter")]
-        public string Get(string id)
+        [HttpGet("{id}")]
+        public ActionResult<string> Get(int id)
         {
-            return "ServiceOne value";
-        }
-
-        [HttpGet("{value}")]
-        public string GetQuery(string value)
-        {
-            var tiozao = Request.Query;
-            return "ServiceOne queryString";
+            return "ServiceThree value";
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody] string value)
         {
             // Method intentionally left empty.
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody] string value)
         {
             // Method intentionally left empty.
         }

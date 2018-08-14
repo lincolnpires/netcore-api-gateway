@@ -8,6 +8,8 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
+// https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation
+
 namespace OcelotApi
 {
     public class ValuesAggregator : IDefinedAggregator

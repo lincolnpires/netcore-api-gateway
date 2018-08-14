@@ -1,0 +1,103 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/values/{value}{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 54162
+        }
+      ],
+      "UpstreamPathTemplate": "/one/{value}{everything}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    //{
+    //  "DownstreamPathTemplate": "/api/values/{everything}",
+    //  "DownstreamScheme": "http",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 54162
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/one/{everything}",
+    //  "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
+    //},
+    {
+      "DownstreamPathTemplate": "/api/values/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 54162
+        }
+      ],
+      "UpstreamPathTemplate": "/one/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "values1"
+    },
+    {
+      "DownstreamPathTemplate": "/api/values/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 54209
+        }
+      ],
+      "UpstreamPathTemplate": "/two/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/values/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 54209
+        }
+      ],
+      "UpstreamPathTemplate": "/two/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "values2"
+    },
+    {
+      "DownstreamPathTemplate": "/api/values/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 53068
+        }
+      ],
+      "UpstreamPathTemplate": "/three/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "values3"
+    },
+    {
+      "DownstreamPathTemplate": "/both/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59266
+        }
+      ],
+      "UpstreamPathTemplate": "/agr/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "agr"
+    }
+  ],
+  "Aggregates": [
+    {
+      "ReRouteKeys": [ "agr", "values3" ],
+      "UpstreamPathTemplate": "/insane/",
+      "Aggregator": "ValuesAggregator"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:59266/",
+    "AdministrationPath":  "/adm"
+  }
+}
