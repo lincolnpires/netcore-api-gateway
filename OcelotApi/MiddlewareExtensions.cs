@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using NLog;
+using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
 namespace OcelotApi
@@ -16,18 +16,19 @@ namespace OcelotApi
     internal class LogRequestMiddleware
     {
         private readonly RequestDelegate next;
-        static ILogger logger = LogManager.GetCurrentClassLogger();
+        private readonly ILogger<LogRequestMiddleware> logger;
 
-        public LogRequestMiddleware(RequestDelegate next)
+        public LogRequestMiddleware(RequestDelegate next, ILogger<LogRequestMiddleware> logger)
         {
             this.next = next;
+            this.logger = logger;
         }
 
         public async Task InvokeAsync(HttpContext context)
         {
-            logger.Debug("Logging from Middleware");
+            logger.LogDebug("Logging from Middleware");
             await next(context);
-            logger.Debug("Logging from Middleware back from the pipeline...");
+            logger.LogDebug("Logging from Middleware back from the pipeline...");
         }
     }
 }

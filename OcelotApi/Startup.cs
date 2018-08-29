@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NLog;
+using Microsoft.Extensions.Logging;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
@@ -13,11 +13,12 @@ namespace OcelotApi
         const string ocelot = nameof(ocelot);
         const string corsPolicy = nameof(corsPolicy);
         const string Logging = nameof(Logging);
-        static ILogger logger = LogManager.GetCurrentClassLogger();
+        readonly ILogger<Startup> logger;
 
-        public Startup(IConfiguration configuration, IHostingEnvironment env)
+        public Startup(IConfiguration configuration, IHostingEnvironment env, ILogger<Startup> logger)
         {
-            logger.Debug(nameof(Startup));
+            this.logger = logger;
+            logger.LogDebug(nameof(Startup));
 
             var configurationBuilder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
@@ -34,7 +35,7 @@ namespace OcelotApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            logger.Debug("Running Startup.ConfigureServices(IServiceCollection)");
+            logger.LogDebug("Running Startup.ConfigureServices(IServiceCollection)");
 
             services.AddCors(options =>
             {

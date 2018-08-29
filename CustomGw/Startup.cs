@@ -1,12 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ServiceTwo
+namespace CustomGw
 {
     public class Startup
     {
+        private const string corsPolicy = nameof(corsPolicy);
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -17,8 +20,15 @@ namespace ServiceTwo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
-            services.AddSingleton(Configuration);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(corsPolicy, builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -28,6 +38,8 @@ namespace ServiceTwo
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(corsPolicy);
 
             app.UseMvc();
         }
